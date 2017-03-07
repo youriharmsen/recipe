@@ -55,6 +55,13 @@ steps = [
   {description: "Bake the garlic and bacon", action:"bake"},
   {description: "Add cooked spaghetti to garlic and bacon", action:"add_spaghetti"},
   {description: "Add egg mixture to spaghetti and mix", action:"add_egg_mixture"},
-  {description: "Turn of heat and wait for 5 minutes", action:"waiting"},
+  {description: "Turn off heat, cover and wait for 5 minutes", action:"waiting"},
   {description: "Finish with black pepper and enjoy", action:"finish_enjoy"},
 ]
+
+print_divider
+puts "See below for the different steps to follow:"
+
+steps.each_with_index do |step, index| #in step both description as action are stored
+  puts (index + 1).to_s + ") " + step[:description]
+end
