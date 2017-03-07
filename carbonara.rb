@@ -100,7 +100,7 @@ steps.each_with_index do |step, index|# AGAIN in step both value of keys descrip
 
   loop do
     ready = ask_if_ready(step,index)
-    break if ready
+    break if ready #its ready when output is Y, because output is always last line methode#
 
     puts "OK, I will give you some extra rime."
     print_progress_bar
@@ -108,3 +108,6 @@ steps.each_with_index do |step, index|# AGAIN in step both value of keys descrip
 
   send(step[:action])
 end
+
+print_divider
+puts "So long and enjoy your Carbonara"
