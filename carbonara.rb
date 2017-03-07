@@ -39,7 +39,7 @@ loop do
     puts "You need to go shopping"
     print_progress_bar
   elsif answer == "Y"
-    puts "Way to go, lets make the best Carbonara ever and impress your mother in law"
+    puts " \n Way to go, lets make the best Carbonara ever and impress your mother in law"
     break
   else
     puts "Do you speak English? What is not to understand in \n yes or no? Try again."
@@ -67,7 +67,7 @@ steps.each_with_index do |step, index| #in step both value of keys description a
 end
 
 def generic_recipe_step
-  puts "On it!"
+  puts "Do it now"
   print_progress_bar
 end
 
@@ -99,7 +99,7 @@ steps.each_with_index do |step, index|# AGAIN in step both value of keys descrip
   print_divider
 
   loop do
-    ready = ask_if_ready(step,index)
+    ready = ask_if_ready(step,index) #storing value from method (last line) in READY. Output is condition TRUE of FALSE. So ready = true of false#
     break if ready #its ready when output is Y, because output is always last line methode#
 
     puts "OK, I will give you some extra time."
