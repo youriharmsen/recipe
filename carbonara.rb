@@ -102,7 +102,7 @@ steps.each_with_index do |step, index|# AGAIN in step both value of keys descrip
     ready = ask_if_ready(step,index)
     break if ready #its ready when output is Y, because output is always last line methode#
 
-    puts "OK, I will give you some extra rime."
+    puts "OK, I will give you some extra time."
     print_progress_bar
   end
 
