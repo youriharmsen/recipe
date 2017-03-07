@@ -45,3 +45,16 @@ loop do
     puts "Do you speak English? What is not to understand in \n yes or no? Try again."
   end
 end
+
+steps = [
+  {description: "Peel the garlic", action:"peel_garlic"},
+  {description: "Grate the Parmesan", action:"grate_parmesan"},
+  {description: "Break the eggs", action:"break_eggs"},
+  {description: "Mix eggs with Parmesan", action:"mix_egg_parmesan"},
+  {description: "Cook the spaghetti", action:"cook_spaghetti"},
+  {description: "Bake the garlic and bacon", action:"bake"},
+  {description: "Add cooked spaghetti to garlic and bacon", action:"add_spaghetti"},
+  {description: "Add egg mixture to spaghetti and mix", action:"add_egg_mixture"},
+  {description: "Turn of heat and wait for 5 minutes", action:"waiting"},
+  {description: "Finish with black pepper and enjoy", action:"finish_enjoy"},
+]
