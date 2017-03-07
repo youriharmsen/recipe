@@ -8,4 +8,14 @@ def print_progress_bar
   puts "\n"
 end
 
-print_progress_bar
+NUM_GARLICCLOVES = 2
+NUM_EGGS = 3
+
+ingredients = [
+  {name: "garlic cloves", quantity: NUM_GARLICCLOVES}
+  {name: "eggs", quantity: NUM_EGGS}
+  {name: "bacon", quantity: "250 grams"}
+  {name: "spaghetti", quantity: "200 grams"}
+  {name: "parmesan", quantity: "some"}
+
+]
