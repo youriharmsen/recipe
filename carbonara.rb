@@ -47,16 +47,16 @@ loop do
 end
 
 steps = [
-  {description: "Peel the garlic", action:"peel_garlic"},
-  {description: "Grate the Parmesan", action:"grate_parmesan"},
+  {description: "Peel and chop the garlic", action:"peel_garlic"},
+  {description: "Grate the Parmesan", action:"generic_recipe_step"},
   {description: "Break the eggs", action:"break_eggs"},
-  {description: "Mix eggs with Parmesan", action:"mix_egg_parmesan"},
-  {description: "Cook the spaghetti", action:"cook_spaghetti"},
-  {description: "Bake the garlic and bacon", action:"bake"},
-  {description: "Add cooked spaghetti to garlic and bacon", action:"add_spaghetti"},
-  {description: "Add egg mixture to spaghetti and mix", action:"add_egg_mixture"},
-  {description: "Turn off heat, cover and wait for 5 minutes", action:"waiting"},
-  {description: "Finish with black pepper and enjoy", action:"finish_enjoy"},
+  {description: "Mix eggs with Parmesan", action:"generic_recipe_step"},
+  {description: "Cook the spaghetti", action:"generic_recipe_step"},
+  {description: "Bake the garlic and bacon", action:"generic_recipe_step"},
+  {description: "Add cooked spaghetti to garlic and bacon", action:"generic_recipe_step"},
+  {description: "Add egg mixture to spaghetti and mix", action:"generic_recipe_step"},
+  {description: "Turn off heat, cover and wait for 5 minutes", action:"generic_recipe_step"},
+  {description: "Finish with black pepper and enjoy", action:"generic_recipe_step"},
 ]
 
 print_divider
@@ -64,4 +64,33 @@ puts "See below for the different steps to follow:"
 
 steps.each_with_index do |step, index| #in step both description as action are stored
   puts (index + 1).to_s + ") " + step[:description]
+end
+
+def generic_recipe_step
+  puts "On it!"
+  print_progress_bar
+end
+
+def peel_garlic
+  counter = 0
+  while counter < NUM_GARLICCLOVES
+    counter += 1
+    print "Peel and chop the garlic #{counter}"
+    print_progress_bar
+  end
+end
+
+def break_eggs
+  counter = 0
+  while counter < NUM_EGGS
+    counter += 1
+    print "Breaking egg #{counter}"
+    print_progress_bar
+  end
+end
+
+def ask_if_ready(step, index)
+  puts "Are you ready for step #{index+1}?\n(#{step[:description]}"
+  answer = gets.chomp
+  answer.upcase == "Y"
 end
