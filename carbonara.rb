@@ -24,6 +24,24 @@ print_divider
 
 puts "You need the following ingredients:"
 
-ingredients.each do |ingredient|
+ingredients.each do |ingredient| #puts the first hash in the argument (first loop)#
   puts "*  #{ingredient[:quantity]} #{ingredient[:name]} "
+end
+
+loop do
+  puts "\n"
+  print_divider
+
+  puts "Got all ingredients you need? (Y/N)"
+  answer = gets.chomp.upcase
+
+  if answer == "N"
+    puts "You need to go shopping"
+    print_progress_bar
+  elsif answer == "Y"
+    puts "Way to go, lets make the best Carbonara ever and impress your mother in law"
+    break
+  else
+    puts "Do you speak English? What is not to understand in \n yes or no? Try again."
+  end
 end
