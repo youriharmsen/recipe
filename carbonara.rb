@@ -62,7 +62,7 @@ steps = [
 print_divider
 puts "See below for the different steps to follow:"
 
-steps.each_with_index do |step, index| #in step both description as action are stored
+steps.each_with_index do |step, index| #in step both value of keys description as action are stored
   puts (index + 1).to_s + ") " + step[:description]
 end
 
@@ -90,7 +90,21 @@ def break_eggs
 end
 
 def ask_if_ready(step, index)
-  puts "Are you ready for step #{index+1}?\n(#{step[:description]}"
+  puts "Are you ready for step #{index+1}?\n(#{step[:description]})"
   answer = gets.chomp
   answer.upcase == "Y"
+end
+
+steps.each_with_index do |step, index|# AGAIN in step both value of keys description as action are stored
+  print_divider
+
+  loop do
+    ready = ask_if_ready(step,index)
+    break if ready
+
+    puts "OK, I will give you some extra rime."
+    print_progress_bar
+  end
+
+  send(step[:action])
 end
